@@ -1,0 +1,270 @@
+MainWindow:
+
+    First:
+    Third:
+    Fth:
+
+<First>:
+    name: "main"
+    id:One_one
+    thresh_hold:input
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "/Users/geeteshgupta/Desktop/1.jpg"
+    GridLayout:
+        cols:1
+        orientation: "horizontal"
+        Label:
+            text: "Welcome"
+            font_size:38
+        BoxLayout:
+            Label:
+                text:"Upload geneset file"
+                font_size:20
+            Label:
+                text:"Upload pathway file"
+                font_size:20
+        BoxLayout:
+
+            AnchorLayout:
+                anchor_x:"center"
+                anchor_y:"center"
+                Button:
+                    size_hint: 0.4,0.3
+                    text:"Choose files to upload"
+                    background_color:(0,1,0,1)
+                    bold:True
+                    on_release:
+                        app.root.current = 'next_window'
+                        root.manager.transition.direction
+            AnchorLayout:
+                anchor_x:"center"
+                anchor_y:"center"
+                Button:
+                    size_hint:0.4,0.3
+                    text:"Choose files to upload"
+                    bold:True
+                    background_color:(0,1,0,1)
+                    on_release:
+
+                        app.root.current = "next"
+                        root.manager.transition.direction
+
+        GridLayout:
+            cols:1
+            Label:
+                text: "Select Method"
+                font_size:24
+            BoxLayout:
+                rows:1
+                spacing:10,10
+                CheckBox:
+                    group:"check"
+                    canvas.before:
+                        Color:
+                            rgb: 0,0,1
+                        Rectangle:
+                            pos:self.center_x-8, self.center_y-8
+                            size:[16,16]
+                        Color:
+                            rgb: 0,0,0
+                        Rectangle:
+                            pos:self.center_x-7, self.center_y-7
+                            size:[14,14]
+                    color:(0,1,0,1)
+                    on_active: app.root.method(self,self.active,1)
+                Label:
+                    text: "Bottom-up"
+                    font_size:18
+                CheckBox:
+                    group:"check"
+                    color:(0,1,0,1)
+                    canvas.before:
+                        Color:
+                            rgb: 0,0,1
+                        Rectangle:
+                            pos:self.center_x-8, self.center_y-8
+                            size:[16,16]
+                        Color:
+                            rgb: 0,0,0
+                        Rectangle:
+                            pos:self.center_x-7, self.center_y-7
+                            size:[14,14]
+                    on_active:app.root.method(self,self.active,2)
+                Label:
+                    text: "Nearest Neighbour"
+                    font_size:18
+
+                CheckBox:
+                    group:"check"
+                    color:(0,1,0,1)
+                    canvas.before:
+                        Color:
+                            rgb: 0,0,1
+                        Rectangle:
+                            pos:self.center_x-8, self.center_y-8
+                            size:[16,16]
+                        Color:
+                            rgb: 0,0,0
+                        Rectangle:
+                            pos:self.center_x-7, self.center_y-7
+                            size:[14,14]
+                    on_active:app.root.method(self,self.active,3)
+                Label:
+                    text: "Best first search"
+                    font_size:18
+                CheckBox:
+                    group:"check"
+                    color:(0,1,0,1)
+                    canvas.before:
+                        Color:
+                            rgb: 0,0,1
+                        Rectangle:
+                            pos:self.center_x-8, self.center_y-8
+                            size:[16,16]
+                        Color:
+                            rgb: 0,0,0
+                        Rectangle:
+                            pos:self.center_x-7, self.center_y-7
+                            size:[14,14]
+                    on_active:app.root.method(self,self.active,4)
+                Label:
+                    text:"Greedy Cube"
+                    font_size:18
+            BoxLayout:
+                orientation:"horizontal"
+                cols:2
+
+                AnchorLayout:
+
+                    anchor_x:"center"
+                    anchor_y:"center"
+
+                    Label:
+                        text:"Enter threshold"
+                        valign:"center"
+                        size_hint:0.2,0.2
+                        font_size:20
+                AnchorLayout:
+
+                    anchor_x:"left"
+                    anchor_y:"center"
+                    TextInput:
+                        id:input
+                        multiline: False
+                        input_filter:"float"
+                        size_hint:0.1,0.8
+
+
+
+        BoxLayout:
+
+            AnchorLayout:
+                anchor_x:"center"
+                anchor_y:"center"
+
+                Button:
+                    size_hint: 0.4,0.3
+                    bold:True
+                    background_color:(0,1,0,1)
+                    text:"Next"
+                    on_release:
+                        root.store()
+                        app.root.printing()
+
+            AnchorLayout:
+                anchor_x:"center"
+                anchor_y:"center"
+                Button:
+                    size_hint:0.4,0.3
+                    bold:True
+                    background_color:(1,0,0,1)
+                    text:"Exit"
+                    on_release:
+                        app.stop()
+
+<Third>:
+    name: "next_window"
+    orientation: 'vertical'
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "/Users/geeteshgupta/Desktop/1.jpg"
+
+    BoxLayout:
+        cols:1
+
+        FileChooserListView:
+            id:filechoose
+
+        BoxLayout:
+            cols:2
+
+            AnchorLayout:
+                anchor_x:"center"
+                anchor_y:"center"
+                Button:
+                    text:"Load"
+                    bold:True
+                    background_color:(0,1,0,1)
+                    size_hint:0.4,0.1
+                    on_release:
+                        app.root.file_load(filechoose.path,filechoose.selection)
+                        app.root.current="main"
+            AnchorLayout:
+                anchor_x:"center"
+                anchor_y:"center"
+                Button:
+                    text:"return"
+                    bold:True
+                    background_color:(0,1,0,1)
+                    size_hint:0.4,0.1
+                    pos:0,0
+                    on_release:app.root.current="main"
+
+<Fth>:
+    name: "next"
+    orientation: 'vertical'
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "/Users/geeteshgupta/Desktop/1.jpg"
+
+    BoxLayout:
+        cols:1
+
+        FileChooserListView:
+            id:filechoose1
+
+        BoxLayout:
+            cols:2
+
+            AnchorLayout:
+                anchor_x:"center"
+                anchor_y:"center"
+                Button:
+                    text:"Load"
+                    bold:True
+                    background_color:(0,1,0,1)
+                    size_hint:0.4,0.1
+                    pos:0,0
+                    on_release:
+                        app.root.path_load(filechoose1.path,filechoose1.selection)
+                        app.root.current="main"
+            AnchorLayout:
+                anchor_x:"center"
+                anchor_y:"center"
+                Button:
+                    text:"return"
+                    bold:True
+                    background_color:(0,1,0,1)
+                    pos:0,0
+                    size_hint:0.4,0.1
+                    on_release:app.root.current="main"
+
+
+
