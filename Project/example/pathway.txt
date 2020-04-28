@@ -1,0 +1,16 @@
+s	source	entrez_gene_ids
+Citalopram Pathway, Pharmacokinetics	PA164713429	PharmGKB	1576,5243,6532,1557,1565
+Artemisinin and Derivatives Pathway, Pharmacokinetics	PA165378192	PharmGKB	7364,1576,1577,1548,54600,1555
+PKB-mediated events	R-HSA-109703	Reactome	5140,208
+Amodiaquine Pathway, Pharmacokinetics	PA165815256	PharmGKB	1545,1558,1543
+Methotrexate Pathway (Brain Cell), Pharmacokinetics	PA165816270	PharmGKB	9376,4363,9356,10257,6579,9429,5243
+Mevalonate pathway	WP3963	Wikipathways	39,10654,2224,3157,4597,4598,3156
+Methotrexate Pathway, Pharmacokinetics	PA165816349	PharmGKB	9376,10599,9356,28234,4363,2348,6573,113235,6579,9429,5243,1244,8714
+Celecoxib Pathway, Pharmacokinetics	PA165816736	PharmGKB	1576,1559,124,1565,125
+Rosiglitazone Pharmacokinetic Pathway	PA165816969	PharmGKB	10599,1558,1559
+UDP-<i>N</i>-acetyl-D-galactosamine biosynthesis II	PWY-5514	HumanCyc	2645,10007,6675,2821,132789,2582,80201,5238,64841
+Agents Acting on the Renin-Angiotensin System Pathway, Pharmacodynamics	PA165110622	PharmGKB	7040,5595,1636,1511,59272,183,4846,623,624,1585,4306,3827,5972,4142,4311,185,5594,10159,186,1215
+Benzodiazepine Pathway, Pharmacokinetics	PA165111375	PharmGKB	1544,54657,7363,7364,7366,1576,1577,10,54600,1557,1565
+Benzodiazepine Pathway, Pharmacodynamics	PA165111376	PharmGKB	2561,706,291,2566,140679,9256,6538,6539,6540,6529,1622,7416,2554,64746
+Prion diseases - Homo sapiens (human)	path:hsa05020	KEGG	5594,5595,1958,5566,5567,5568,581,712,713,714,3915,4684,4685,6352,2002,10963,727,729,730,731,732,733,735,3552,3553,5604,5605,2534,3303,3309,3569,4851,5621,100506742,6647
+Fluoropyrimidine Pathway, Pharmacodynamics	PA165291507	PharmGKB	7298,8836,4524,6996,7157,1719,2356,7517,2068,23583
